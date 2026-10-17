@@ -115,6 +115,52 @@ h2{margin:0;font:400 clamp(1.6rem,4vw,2.4rem)/1 var(--f-display);text-transform:
 .rpos b{font:400 1.3rem/1 var(--f-display);color:var(--coin)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.001ms!important}}
 </style>
+
+<style id="peak-interface-upgrade">
+:root{--accent:#ff9b28;--accent-d:#a9470b;--panel:rgba(11,18,30,.88);--line:rgba(255,255,255,.17)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 12% 18%,rgba(255,145,31,.13),transparent 35%),radial-gradient(ellipse at 88% 78%,rgba(54,156,255,.13),transparent 38%);mix-blend-mode:screen}
+#menu{background:linear-gradient(120deg,rgba(5,9,17,.72),rgba(7,13,23,.38) 45%,rgba(5,9,17,.82));}
+#menu:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+#menu .wrap{position:relative;gap:1.25rem;animation:peakEnter .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes peakEnter{from{opacity:0;transform:translateY(22px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+#menu .top{padding:clamp(14px,2.4vw,26px);border:1px solid rgba(255,255,255,.17);border-radius:24px;background:linear-gradient(130deg,rgba(19,28,43,.94),rgba(13,18,29,.7));box-shadow:0 20px 60px #0005,inset 0 1px #ffffff15;backdrop-filter:blur(14px)}
+#menu .top>div:first-child{position:relative}
+#menu .top>div:first-child:before{content:"ULTIMATE PEAK EDITION  /  OFF-ROAD SERIES";display:block;margin-bottom:12px;color:#ffd18a;font:700 .86rem/1 var(--f-ui);letter-spacing:.2em}
+h1{filter:drop-shadow(0 0 24px rgba(255,138,31,.18));}
+.tag{max-width:38ch;line-height:1.45;color:#e2e8f1}
+.chip{backdrop-filter:blur(10px);box-shadow:inset 0 1px #ffffff12,0 6px 20px #0002}
+#stageGrid .card,#missGrid .card{background:linear-gradient(145deg,rgba(23,33,49,.92),rgba(10,15,25,.94));box-shadow:0 10px 24px #0002,inset 0 1px #ffffff0b}
+.card{border-color:rgba(255,255,255,.15);transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s,background .25s}
+.card:hover{transform:translateY(-7px) scale(1.012);border-color:var(--accent);box-shadow:0 14px 35px rgba(255,138,31,.15),0 0 0 1px #ff8a1f22}
+.card:active{transform:scale(.985)}
+.card .art{background:linear-gradient(135deg,#20344a,#101722)}
+.card .art:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 25%,#ffffff14 45%,transparent 65%);transform:translateX(-130%);animation:artSweep 7s ease-in-out infinite}
+@keyframes artSweep{0%,65%{transform:translateX(-130%)}85%,100%{transform:translateX(130%)}}
+.btn{border-radius:12px;position:relative;overflow:hidden;transition:transform .16s,box-shadow .16s,filter .2s}
+.btn:not(.alt){box-shadow:0 5px 0 var(--accent-d),0 0 24px #ff8a1f20}
+.btn:not(.alt):hover{box-shadow:0 5px 0 var(--accent-d),0 0 32px #ff8a1f55;filter:brightness(1.08)}
+.btn:after{content:"";position:absolute;top:-80%;left:-35%;width:25%;height:260%;transform:rotate(25deg);background:#ffffff35;transition:left .5s}
+.btn:hover:after{left:125%}
+.tab{transition:background .2s,transform .2s,border-color .2s}
+.tab:hover{transform:translateY(-2px);border-color:var(--accent)}
+#modeNote{padding:.8rem 1rem;border-left:3px solid var(--accent);border-radius:0 10px 10px 0;background:rgba(255,255,255,.045)}
+#playBtn{min-width:170px;min-height:3.5rem;font-size:1.3rem;letter-spacing:.12em;animation:playPulse 3s ease-in-out infinite}
+@keyframes playPulse{0%,100%{box-shadow:0 5px 0 var(--accent-d),0 0 0 0 #ff8a1f00}50%{box-shadow:0 5px 0 var(--accent-d),0 0 0 7px #ff8a1f10}}
+#garageBtn{min-height:3.5rem}
+.peak-credit{margin:0;text-align:center;color:#d5dbe5;font-size:.95rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+.peak-credit strong{color:#ffc06b;text-shadow:0 0 18px #ff9b2840}
+.peak-status{display:flex;gap:.55rem;align-items:center;color:#b9c6d6;font-size:.9rem;letter-spacing:.14em;text-transform:uppercase}
+.peak-status:before{content:"";width:8px;height:8px;border-radius:50%;background:#4ee08a;box-shadow:0 0 12px #4ee08a;animation:statusBlink 1.8s infinite}
+@keyframes statusBlink{50%{opacity:.35;transform:scale(.75)}}
+#hud .chip,#hud .fuelbox{filter:drop-shadow(0 3px 10px #0005)}
+#hint{backdrop-filter:blur(12px);box-shadow:0 12px 40px #0005}
+.sheet{box-shadow:0 25px 80px #0008,inset 0 1px #ffffff12;backdrop-filter:blur(18px);animation:sheetIn .28s ease-out both}
+@keyframes sheetIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+#toast{box-shadow:0 8px 28px #0005}
+@media(max-width:600px){#menu .top{padding:16px;border-radius:18px}#menu .wrap{gap:1rem}#menu .top>div:first-child:before{font-size:.7rem;letter-spacing:.12em}.tag{font-size:1.1rem}.peak-credit{font-size:.78rem}#playBtn{flex:1}}
+@media(prefers-reduced-motion:reduce){#menu .wrap,#playBtn,.card .art:after,.peak-status:before{animation:none!important}}
+</style>
+
 </head><body>
 <canvas id="game" aria-label="Ridge Rally game view" role="img"></canvas>
 
@@ -1339,4 +1385,35 @@ renderMenu();
 requestAnimationFrame(frame);
 })();
 </script>
+
+<script id="peak-interface-boot">
+(function(){
+  function enhance(){
+    var menu=document.getElementById('menu'), wrap=menu&&menu.querySelector('.wrap');
+    if(!wrap||document.getElementById('peakCredit'))return;
+    var status=document.createElement('div');status.className='peak-status';status.textContent='Engine ready  •  Choose your next climb';
+    var top=wrap.querySelector('.top');if(top)top.appendChild(status);
+    var credit=document.createElement('p');credit.className='peak-credit';credit.id='peakCredit';
+    credit.innerHTML='RIDGE RALLY <span aria-hidden="true">✦</span> ULTIMATE PEAK EDITION &nbsp; / &nbsp; Developed by <strong>Pranav</strong>';
+    wrap.appendChild(credit);
+    // Small, lightweight menu sparkles; they never cover controls or run during gameplay.
+    var sparks=document.createElement('div');sparks.setAttribute('aria-hidden','true');
+    sparks.style.cssText='position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0';
+    for(var i=0;i<18;i++){
+      var dot=document.createElement('i');var left=(i*47+13)%100,delay=(i%7)*-.8,size=2+(i%3);
+      dot.style.cssText='position:absolute;left:'+left+'%;top:'+(8+(i*31)%84)+'%;width:'+size+'px;height:'+size+'px;border-radius:50%;background:'+(i%3===0?'#ffb65c':'#d6e8ff')+';opacity:.0;box-shadow:0 0 12px currentColor;animation:peakSpark '+(4+i%5)+'s '+delay+'s ease-in-out infinite';
+      sparks.appendChild(dot);
+    }
+    menu.prepend(sparks);
+    var style=document.createElement('style');style.textContent='@keyframes peakSpark{0%,100%{opacity:0;transform:translateY(10px) scale(.5)}45%{opacity:.55}70%{opacity:.15;transform:translateY(-22px) scale(1.2)}}';document.head.appendChild(style);
+    // Small tactile feedback for mouse and keyboard activation.
+    wrap.querySelectorAll('button,.card').forEach(function(el){
+      el.addEventListener('pointerdown',function(){el.style.setProperty('--tap-scale','.985')},{passive:true});
+      el.addEventListener('pointerup',function(){el.style.removeProperty('--tap-scale')},{passive:true});
+    });
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enhance);else enhance();
+})();
+</script>
+
 </body></html>
